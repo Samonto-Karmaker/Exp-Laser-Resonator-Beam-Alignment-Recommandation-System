@@ -20,8 +20,8 @@ To operate efficiently, you must fully utilize this `ai/` directory. It is your 
 - **Entry Point**: Begin any ambiguous request by checking `ai/index.md` to map the workspace.
 - **Domain Logic**: Check `ai/context.md` for data formats, metadata rules, feature engineering constraints, and target definitions.
 - **Strategic Plan**: Consult `ai/plan.md` for the overarching 6-step roadmap.
-- **Micro-Steps**: When tasked with a specific project phase, strictly read the relevant `ai/implementation/step_*_explainer.md` file _before_ writing code. (A copy of the current step's to-do list must also be maintained here).
-- **State Management**: Regularly view and update `ai/implementation/PROGRESS.md` to track sub-tasks across a Jira-like sprint board. Adhere to the Context Optimization Rule: do not read historical "Done" explainer files unless a specific dependency requires it.
+- **Micro-Steps**: When tasked with a specific project phase, strictly read the relevant `ai/implementation/step_##/explainer.md` file _before_ writing code. The active step's detailed checklist must be maintained in `ai/implementation/step_##/todo.md`, and completion findings must be recorded in `ai/implementation/step_##/outcome.md`.
+- **State Management**: Regularly view and update `ai/implementation/PROGRESS.md` to track sub-tasks across a Jira-like sprint board. Adhere to the Context Optimization Rule: do not read historical "Done" step files unless a specific dependency requires it.
 - **Continuous Learning**: Document data constraints, correlation discoveries, or model failure reasons in the `ai/memory/` folder (e.g., `eda_insights.md`).
 
 ---
@@ -33,7 +33,7 @@ To operate efficiently, you must fully utilize this `ai/` directory. It is your 
 Whenever a new execution thread or session begins, quickly verify your current standing:
 
 - Review `ai/implementation/PROGRESS.md` to understand what was last completed.
-- Identify the current step and read its respective `step_*_explainer.md`.
+- Identify the current step and read its respective `ai/implementation/step_##/explainer.md` and `ai/implementation/step_##/todo.md`.
 
 ### 2. Execution & Exploration
 
@@ -49,7 +49,7 @@ Whenever a new execution thread or session begins, quickly verify your current s
 ### 4. Completion & Documentation
 
 - Ensure every major change successfully propagates up through documentation.
-- After completing a full step, clear its granular sub-tasks from `ai/implementation/PROGRESS.md`. Add a single summary entry to the "Done" section with the step name, a short description, and a link to its explainer file.
+- After completing a full step, update `ai/implementation/step_##/outcome.md`, clear any granular sub-tasks from `ai/implementation/PROGRESS.md`, and add a single summary entry to the "Done" section with the step name, a short description, and links to the step folder files.
 - Record architectural shifts—such as choosing LightGBM over Random Forest due to speed/accuracy—inside `ai/memory/architectural_decisions.md`. **This file is strictly APPEND-ONLY.** Always include a timestamp and a detailed justification of why the decision was made. Before acting on architecture, identify and adhere to the latest relevant ADR (Architectural Decision Record) in this file.
 
 ---

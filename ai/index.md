@@ -10,7 +10,9 @@ Use the links below to access different parts of the project's knowledge base.
 - **[plan.md](plan.md)**: The strategic high-level roadmap. Outlines the 6 fundamental phases we will follow to achieve the final programmatic recommendation model.
 - **[agent.md](agent.md)**: Custom configurations, prompts, and instructions for how the AI agent behaves and processes information on this specific repository.
 - **[implementation/PROGRESS.md](implementation/PROGRESS.md)**: The overarching action tracker marking what has been done and what remains.
-- **`implementation/step_*_explainer.md`**: Deep-dive strategy documents explaining exact mechanics, expected outputs, and constraints for each of the 6 steps outlined in `plan.md`.
+- **`implementation/step_##/explainer.md`**: Deep-dive strategy document explaining exact mechanics, expected outputs, and constraints for each step outlined in `plan.md`.
+- **`implementation/step_##/todo.md`**: Detailed task-level checklist for the active step.
+- **`implementation/step_##/outcome.md`**: Completion summary for the step, including artifacts, decisions, and unresolved issues.
 - **`memory/`**: A storage space for logging project-specific insights (like EDA results) and architectural ML decisions.
 
 ---
@@ -74,12 +76,12 @@ A dedicated folder to store the rules, context, and memory for the AI coding ass
     ├── plan.md                     # Strategic roadmap and high-level steps
     ├── implementation/             # Execution and tracking files
     │   ├── PROGRESS.md             # Comprehensive progress tracker for the entire project
-    │   ├── step_01_explainer.md    # Detailed explainer for Step 1 (Data Ingestion)
-    │   ├── step_02_explainer.md    # Detailed explainer for Step 2 (EDA)
-    │   ├── step_03_explainer.md    # Detailed explainer for Step 3 (Feature Engineering)
-    │   ├── step_04_explainer.md    # Detailed explainer for Step 4 (Model Development)
-    │   ├── step_05_explainer.md    # Detailed explainer for Step 5 (Evaluation)
-    │   └── step_06_explainer.md    # Detailed explainer for Step 6 (Extensions)
+    │   ├── step_01/                # Step 1 docs: explainer, todo, outcome
+    │   ├── step_02/                # Step 2 docs: explainer, todo, outcome
+    │   ├── step_03/                # Step 3 docs: explainer, todo, outcome
+    │   ├── step_04/                # Step 4 docs: explainer, todo, outcome
+    │   ├── step_05/                # Step 5 docs: explainer, todo, outcome
+    │   └── step_06/                # Step 6 docs: explainer, todo, outcome
     └── memory/                     # Directory to store modular learning from this project
         ├── eda_insights.md         # (Future) Saved conclusions from EDA
         └── architectural_decisions.md # (Future) Logs of why certain ML models were chosen
