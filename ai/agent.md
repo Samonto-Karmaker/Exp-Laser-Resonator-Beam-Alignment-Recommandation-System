@@ -46,6 +46,9 @@ Whenever a new execution thread or session begins, quickly verify your current s
 - Keep `ai/implementation/PROGRESS.md` and the active step's `todo.md` synchronized at all times.
 - Move the current execution unit through the same stage sequence in both files: `To Do` -> `In Progress` -> `In Review` -> `Done`.
 - Do not advance a later execution unit until the current unit has been completed or explicitly paused with its status documented.
+- A task or execution unit is considered done only when the developer explicitly says it is done.
+- After evaluation and testing are completed in the `In Review` stage, prompt the developer for approval.
+- Move work from `In Review` to `Done` only after the developer approves it.
 
 ### 3. Verification
 
