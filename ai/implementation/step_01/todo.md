@@ -9,16 +9,16 @@ This checklist is grouped into execution units that can move through the sprint 
 - Join before/after states using `index1` and `index2`.
 - Rename columns with role prefixes: `before_`, `after_`, `target_`, and `meta_`.
 - Keep required metadata columns:
-  - `meta_index1`
-  - `meta_index2`
-  - `meta_before_experiment_number`
-  - `meta_after_experiment_number`
-  - `meta_diff_count`
+    - `meta_index1`
+    - `meta_index2`
+    - `meta_before_experiment_number`
+    - `meta_after_experiment_number`
+    - `meta_diff_count`
 - Keep before-state controllable parameter columns as model input features.
 - Drop direct date/time/file metadata from the final CSV:
-  - `Date`
-  - `Timestamp`
-  - `filename`
+    - `Date`
+    - `Timestamp`
+    - `filename`
 
 ### Unit 04 - Gaussian Parsing and Raw String Cleanup
 
@@ -41,7 +41,7 @@ This checklist is grouped into execution units that can move through the sprint 
 - Choose and document an explicit missing-value strategy.
 - Ensure the final CSV has no missing values.
 - Save exactly one processed CSV:
-  - `data/processed/dataset_001.csv`
+    - `data/processed/dataset_001.csv`
 - Confirm the saved CSV is unsplit and ready for Step 2 EDA.
 
 ### Unit 07 - End-of-Step Review and Promotion Decision
@@ -52,24 +52,11 @@ This checklist is grouped into execution units that can move through the sprint 
 
 ## To Do
 
-### Unit 02 - Raw Data Loading and Schema Validation
-
-- Confirm expected raw data paths:
-  - `data/raw/labels.json`
-  - `data/raw/sampled_pairs_500k.json`
-- Write and run Python code in the Step 1 notebook to load both raw files.
-- Inspect shapes, sample records, field names, and basic schema characteristics through notebook/Python output.
-- Validate required fields for pair joining, beam features, Gaussian parsing, target synthesis, and metadata retention through notebook/Python code.
-- Document any schema assumptions or unexpected raw-field issues in the notebook.
-- Do not rely on model-side/manual inspection of raw JSON files as the source of truth for Unit 02.
-
 ## In Progress
 
 -
 
 ## In Review
-
--
 
 ## Done
 
@@ -79,3 +66,14 @@ This checklist is grouped into execution units that can move through the sprint 
 - Defined project-root-relative paths in the notebook.
 - Added a notebook structure matching the Step 1 flow: load, validate, join, parse, synthesize targets, resolve missing values, validate output, save CSV.
 - Verified the notebook JSON parses successfully.
+
+### Unit 02 - Raw Data Loading and Schema Validation
+
+- Confirm expected raw data paths:
+    - `data/raw/labels.json`
+    - `data/raw/sampled_pairs_500k.json`
+- Write and run Python code in the Step 1 notebook to load both raw files.
+- Inspect shapes, sample records, field names, and basic schema characteristics through notebook/Python output.
+- Validate required fields for pair joining, beam features, Gaussian parsing, target synthesis, and metadata retention through notebook/Python code.
+- Document any schema assumptions or unexpected raw-field issues in the notebook.
+- Do not rely on model-side/manual inspection of raw JSON files as the source of truth for Unit 02.

@@ -15,7 +15,7 @@ This board manages the project state using a Jira-like sprint flow, focusing on 
 
 ## Backlog
 
-*(Sub-tasks for future steps or overflow from the current step)*
+_(Sub-tasks for future steps or overflow from the current step)_
 
 ### Step 1 / Unit 03 - Pair Join and Role-Based Column Layout
 
@@ -52,7 +52,28 @@ This board manages the project state using a Jira-like sprint flow, focusing on 
 
 ## To Do
 
-*(Actionable sub-tasks for the current step)*
+_(Actionable sub-tasks for the current step)_
+
+## In Progress
+
+_(What is actively being worked on right now)_
+
+-
+
+## In Review
+
+_(Sub-tasks that are executed but pending verification/evaluation)_
+
+## Done
+
+_(Completed steps. Link to step folder files here. Clear out granular sub-tasks once the whole step is done.)_
+
+### Step 1 / Unit 01 - Notebook Scaffold and Run Context
+
+- Created `notebooks/01_data_ingestion_and_prep.ipynb`.
+- Defined project-root-relative paths in the notebook.
+- Added notebook sections for load, validate, join, parse, synthesize targets, resolve missing values, validate output, and save CSV.
+- Verified the notebook JSON parses successfully.
 
 ### Step 1 / Unit 02 - Raw Data Loading and Schema Validation
 
@@ -62,26 +83,3 @@ This board manages the project state using a Jira-like sprint flow, focusing on 
 - Validate fields required for pair joining, candidate features, Gaussian parsing, targets, and metadata retention through notebook/Python code.
 - Document schema assumptions or unexpected raw-field issues in the Step 1 notebook.
 - Do not rely on model-side/manual inspection of raw JSON files as the source of truth for Unit 02.
-
-## In Progress
-
-*(What is actively being worked on right now)*
-
--
-
-## In Review
-
-*(Sub-tasks that are executed but pending verification/evaluation)*
-
--
-
-## Done
-
-*(Completed steps. Link to step folder files here. Clear out granular sub-tasks once the whole step is done.)*
-
-### Step 1 / Unit 01 - Notebook Scaffold and Run Context
-
-- Created `notebooks/01_data_ingestion_and_prep.ipynb`.
-- Defined project-root-relative paths in the notebook.
-- Added notebook sections for load, validate, join, parse, synthesize targets, resolve missing values, validate output, and save CSV.
-- Verified the notebook JSON parses successfully.
