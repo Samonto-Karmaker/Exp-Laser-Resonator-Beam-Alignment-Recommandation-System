@@ -34,12 +34,18 @@ Whenever a new execution thread or session begins, quickly verify your current s
 
 - Review `ai/implementation/PROGRESS.md` to understand what was last completed.
 - Identify the current step and read its respective `ai/implementation/step_##/explainer.md` and `ai/implementation/step_##/todo.md`.
+- When a step is first initiated, copy all detailed tasks from that step's `todo.md` into the `Backlog` section of `ai/implementation/PROGRESS.md`.
+- Group related detailed tasks into execution units. Each unit should represent a coherent work package that can move through the sprint stages together.
+- Pull execution units from the backlog sequentially, one unit at a time, into the `To Do` stage of both `PROGRESS.md` and the active step's `todo.md`.
 
 ### 2. Execution & Exploration
 
 - Use available file-reading and search tools to safely explore code and data structures.
 - Adhere strictly to the requested two-stage architecture: 4 independent classifiers (change detection) and 4 independent regressors (delta prediction).
 - Never modify immutable data entries in `data/raw/`. Save all transformations outputs to `data/processed/`.
+- Keep `ai/implementation/PROGRESS.md` and the active step's `todo.md` synchronized at all times.
+- Move the current execution unit through the same stage sequence in both files: `To Do` -> `In Progress` -> `In Review` -> `Done`.
+- Do not advance a later execution unit until the current unit has been completed or explicitly paused with its status documented.
 
 ### 3. Verification
 
@@ -51,7 +57,6 @@ Whenever a new execution thread or session begins, quickly verify your current s
 - Ensure every major change successfully propagates up through documentation.
 - After completing a full step, update `ai/implementation/step_##/outcome.md`, clear any granular sub-tasks from `ai/implementation/PROGRESS.md`, and add a single summary entry to the "Done" section with the step name, a short description, and links to the step folder files.
 - Record architectural shifts—such as choosing LightGBM over Random Forest due to speed/accuracy—inside `ai/memory/architectural_decisions.md`. **This file is strictly APPEND-ONLY.** Always include a timestamp and a detailed justification of why the decision was made. Before acting on architecture, identify and adhere to the latest relevant ADR (Architectural Decision Record) in this file.
-
 ---
 
 ## Coding Standards
