@@ -57,9 +57,11 @@ This checklist is grouped into execution units that can move through the sprint 
 - Confirm expected raw data paths:
   - `data/raw/labels.json`
   - `data/raw/sampled_pairs_500k.json`
-- Load both raw files and inspect shapes and sample records.
-- Validate required fields for pair joining, beam features, Gaussian parsing, target synthesis, and metadata retention.
+- Write and run Python code in the Step 1 notebook to load both raw files.
+- Inspect shapes, sample records, field names, and basic schema characteristics through notebook/Python output.
+- Validate required fields for pair joining, beam features, Gaussian parsing, target synthesis, and metadata retention through notebook/Python code.
 - Document any schema assumptions or unexpected raw-field issues in the notebook.
+- Do not rely on model-side/manual inspection of raw JSON files as the source of truth for Unit 02.
 
 ## In Progress
 

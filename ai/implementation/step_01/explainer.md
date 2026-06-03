@@ -172,8 +172,8 @@ The final CSV should include before and after beam-quality/shape metadata as can
 The notebook should be readable and reproducible. It should:
 
 - define paths relative to the project root,
-- load raw files,
-- inspect basic shapes and required columns,
+- load raw files through notebook/Python code,
+- inspect basic shapes, sample records, field names, and required columns through notebook/Python output,
 - perform the before/after join,
 - parse Gaussian fields,
 - synthesize targets,
@@ -181,6 +181,8 @@ The notebook should be readable and reproducible. It should:
 - verify the final dataset has no missing values,
 - verify no after-state controllable parameter columns remain,
 - verify one CSV is written to `data/processed/dataset_001.csv`.
+
+Everything must be performed through Python code in the notebook. The agent should not rely on manual/model-side inspection of raw JSON files as the source of truth.
 
 Small helper functions in `src/` are allowed if they make the notebook cleaner. Full production pipeline code should only be promoted after the notebook output is validated.
 

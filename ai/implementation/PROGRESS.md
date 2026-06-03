@@ -57,9 +57,11 @@ This board manages the project state using a Jira-like sprint flow, focusing on 
 ### Step 1 / Unit 02 - Raw Data Loading and Schema Validation
 
 - Confirm raw paths for `labels.json` and `sampled_pairs_500k.json`.
-- Load raw files; inspect shapes and sample records.
-- Validate fields required for pair joining, candidate features, Gaussian parsing, targets, and metadata retention.
+- Write and run Python code in the Step 1 notebook to load the raw files.
+- Inspect shapes, sample records, field names, and basic schema characteristics through notebook/Python output.
+- Validate fields required for pair joining, candidate features, Gaussian parsing, targets, and metadata retention through notebook/Python code.
 - Document schema assumptions or unexpected raw-field issues in the Step 1 notebook.
+- Do not rely on model-side/manual inspection of raw JSON files as the source of truth for Unit 02.
 
 ## In Progress
 
