@@ -4,14 +4,6 @@ This checklist is grouped into execution units that can move through the sprint 
 
 ## Backlog
 
-### Unit 05 - Target Synthesis and Leakage Checks
-
-- Compute the four target delta columns using raw numeric values and standard Python/pandas 2-decimal rounding.
-- Compute the four binary changed-label columns.
-- Exclude rows with missing required target-synthesis values; never impute targets.
-- Drop after-state controllable parameter columns after target synthesis.
-- Validate `meta_diff_count` against synthesized changed labels and report warnings if mismatches exist.
-
 ### Unit 06 - Missing-Value Resolution and Final CSV Validation
 
 - Inspect missing values by column.
@@ -70,3 +62,10 @@ This checklist is grouped into execution units that can move through the sprint 
 - Inspected parse failure patterns (no failure pattern to inspect, as it matched perfectly across all 500k records).
 - Dropped raw Gaussian equation string columns from the joined dataset.
 
+### Unit 05 - Target Synthesis and Leakage Checks
+
+- Computed the four target delta columns using raw numeric values and standard Python/pandas 3-decimal rounding.
+- Computed the four binary changed-label columns.
+- Excluded rows with missing required target-synthesis values (none found).
+- Dropped after-state controllable parameter columns to avoid leakage.
+- Validated `meta_diff_count` against synthesized changed labels.

@@ -11,18 +11,9 @@ This board manages the project state using a Jira-like sprint flow, focusing on 
 > **Context Optimization Rule (For AI Agent):**
 > Do **NOT** read historical step folders linked in the "Done" section by default. Only read historical step files if you explicitly identify a dependency or require specific context to complete the task in-hand. Read nothing more, nothing less.
 
----
-
 ## Backlog
 
 _(Sub-tasks for future steps or overflow from the current step)_
-
-### Step 1 / Unit 05 - Target Synthesis and Leakage Checks
-
-- Build 2-decimal target deltas and numeric binary changed labels.
-- Exclude rows missing required target-synthesis values; never impute targets.
-- Drop after-state controllable parameter columns after target synthesis.
-- Validate synthesized changed-label counts against `meta_diff_count`.
 
 ### Step 1 / Unit 06 - Missing-Value Resolution and Final CSV Validation
 
@@ -44,8 +35,6 @@ _(Actionable sub-tasks for the current step)_
 ## In Progress
 
 _(What is actively being worked on right now)_
-
--
 
 ## In Review
 
@@ -83,3 +72,11 @@ _(Completed steps. Link to step folder files here. Clear out granular sub-tasks 
 - Parse before/after X/Y Gaussian equations into numeric center and scale features.
 - Reported 0 parse failures across all 500,000 pairs (all parsed successfully).
 - Dropped raw Gaussian equation string columns from the final joined dataset.
+
+### Step 1 / Unit 05 - Target Synthesis and Leakage Checks
+
+- Computed the four target delta columns using raw numeric values and standard Python/pandas 3-decimal rounding.
+- Computed the four binary changed-label columns.
+- Excluded rows with missing required target-synthesis values (none found).
+- Dropped after-state controllable parameter columns to avoid leakage.
+- Validated `meta_diff_count` against synthesized changed labels.
