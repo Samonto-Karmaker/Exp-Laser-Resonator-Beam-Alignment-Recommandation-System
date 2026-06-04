@@ -4,15 +4,6 @@ This checklist is grouped into execution units that can move through the sprint 
 
 ## Backlog
 
-### Unit 06 - Missing-Value Resolution and Final CSV Validation
-
-- Inspect missing values by column.
-- Choose and document an explicit missing-value strategy.
-- Ensure the final CSV has no missing values.
-- Save exactly one processed CSV:
-    - `data/processed/dataset_001.csv`
-- Confirm the saved CSV is unsplit and ready for Step 2 EDA.
-
 ### Unit 07 - End-of-Step Review and Promotion Decision
 
 - Review whether any validated helper logic should be promoted into `src/`.
@@ -22,8 +13,6 @@ This checklist is grouped into execution units that can move through the sprint 
 ## To Do
 
 ## In Progress
-
--
 
 ## In Review
 
@@ -69,3 +58,12 @@ This checklist is grouped into execution units that can move through the sprint 
 - Excluded rows with missing required target-synthesis values (none found).
 - Dropped after-state controllable parameter columns to avoid leakage.
 - Validated `meta_diff_count` against synthesized changed labels.
+
+### Unit 06 - Missing-Value Resolution and Final CSV Validation
+
+- Inspect missing values by column.
+- Choose and document an explicit missing-value strategy.
+- Ensure the final CSV has no missing values.
+- Save exactly one processed CSV:
+    - `data/processed/dataset_001.csv`
+- Confirm the saved CSV is unsplit and ready for Step 2 EDA.

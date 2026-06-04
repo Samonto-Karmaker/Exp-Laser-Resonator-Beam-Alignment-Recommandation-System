@@ -15,13 +15,6 @@ This board manages the project state using a Jira-like sprint flow, focusing on 
 
 _(Sub-tasks for future steps or overflow from the current step)_
 
-### Step 1 / Unit 06 - Missing-Value Resolution and Final CSV Validation
-
-- Inspect missing values by column.
-- Choose and document the missing-value strategy.
-- Verify the final dataset has no missing values.
-- Save exactly one unsplit processed CSV to `data/processed/dataset_001.csv`.
-
 ### Step 1 / Unit 07 - End-of-Step Review and Promotion Decision
 
 - Decide whether any validated notebook helper logic should be promoted into `src/`.
@@ -33,8 +26,6 @@ _(Sub-tasks for future steps or overflow from the current step)_
 _(Actionable sub-tasks for the current step)_
 
 ## In Progress
-
-_(What is actively being worked on right now)_
 
 ## In Review
 
@@ -80,3 +71,10 @@ _(Completed steps. Link to step folder files here. Clear out granular sub-tasks 
 - Excluded rows with missing required target-synthesis values (none found).
 - Dropped after-state controllable parameter columns to avoid leakage.
 - Validated `meta_diff_count` against synthesized changed labels.
+
+### Step 1 / Unit 06 - Missing-Value Resolution and Final CSV Validation
+
+- Inspect missing values by column.
+- Choose and document the missing-value strategy.
+- Verify the final dataset has no missing values.
+- Save exactly one unsplit processed CSV to `data/processed/dataset_001.csv`.
