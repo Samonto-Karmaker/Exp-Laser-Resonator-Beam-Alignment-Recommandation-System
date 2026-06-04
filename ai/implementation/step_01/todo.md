@@ -4,13 +4,6 @@ This checklist is grouped into execution units that can move through the sprint 
 
 ## Backlog
 
-### Unit 04 - Gaussian Parsing and Raw String Cleanup
-
-- Parse before/after X/Y Gaussian equation strings into numeric center and scale fields.
-- Report Gaussian parse failure counts.
-- Inspect parse failure examples or patterns before choosing cleanup behavior.
-- Drop raw Gaussian equation string columns after parsing.
-
 ### Unit 05 - Target Synthesis and Leakage Checks
 
 - Compute the four target delta columns using raw numeric values and standard Python/pandas 2-decimal rounding.
@@ -69,3 +62,11 @@ This checklist is grouped into execution units that can move through the sprint 
 - Kept required metadata columns (`meta_index1`, `meta_index2`, `meta_before_experiment_number`, `meta_after_experiment_number`, `meta_diff_count`).
 - Kept before-state controllable parameter columns as model input features.
 - Dropped direct date/time/file metadata (`Date`, `Timestamp`, `filename`) from the final CSV.
+
+### Unit 04 - Gaussian Parsing and Raw String Cleanup
+
+- Parsed before/after X/Y Gaussian equation strings into numeric center and scale fields (`before_x_gaussian_center_parsed`, `before_x_gaussian_scale_parsed`, etc.).
+- Reported Gaussian parse failure counts (0 failures detected).
+- Inspected parse failure patterns (no failure pattern to inspect, as it matched perfectly across all 500k records).
+- Dropped raw Gaussian equation string columns from the joined dataset.
+

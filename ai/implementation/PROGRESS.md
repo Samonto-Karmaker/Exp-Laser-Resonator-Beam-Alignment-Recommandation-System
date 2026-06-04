@@ -17,12 +17,6 @@ This board manages the project state using a Jira-like sprint flow, focusing on 
 
 _(Sub-tasks for future steps or overflow from the current step)_
 
-### Step 1 / Unit 04 - Gaussian Parsing and Raw String Cleanup
-
-- Parse before/after X/Y Gaussian equations into numeric center and scale features.
-- Report parse failure counts and inspect failure patterns.
-- Drop raw Gaussian equation strings after parsing.
-
 ### Step 1 / Unit 05 - Target Synthesis and Leakage Checks
 
 - Build 2-decimal target deltas and numeric binary changed labels.
@@ -83,3 +77,9 @@ _(Completed steps. Link to step folder files here. Clear out granular sub-tasks 
 - Formatted columns with `before_`, `after_`, and `meta_` prefix roles.
 - Retained required grouping metadata (`meta_index1`, `meta_index2`, `meta_diff_count`, `meta_before_experiment_number`, `meta_after_experiment_number`) and before-state controllable parameters.
 - Dropped direct date, timestamp, and filename columns from the dataset.
+
+### Step 1 / Unit 04 - Gaussian Parsing and Raw String Cleanup
+
+- Parse before/after X/Y Gaussian equations into numeric center and scale features.
+- Reported 0 parse failures across all 500,000 pairs (all parsed successfully).
+- Dropped raw Gaussian equation string columns from the final joined dataset.
