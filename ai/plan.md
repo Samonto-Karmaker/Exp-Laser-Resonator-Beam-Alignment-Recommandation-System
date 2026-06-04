@@ -31,7 +31,7 @@ Outputs and labels will be strictly governed by physical constraints mapped to 2
 
 ### Step 1: Data Ingestion & Target Synthesis
 
-**Overview:** Develop a preprocessing engine to join `labels.json` to `sampled_pairs_500k.json`. Convert raw string data—specifically X and Y Gaussian Equations—into numeric feature columns (centers, scales). Establish the targets by calculating the deltas between the 'after' and 'before' controlled parameters, rounding all deltas to 2 decimal places to create Boolean 'changed' labels and precise numeric values.
+**Overview:** Develop a preprocessing engine to join `labels.json` to `sampled_pairs_500k.json`. Convert raw string data—specifically X and Y Gaussian Equations—into numeric feature columns (centers, scales). Establish the targets by calculating the deltas between the 'after' and 'before' controlled parameters, rounding all deltas to 3 decimal places to create Boolean 'changed' labels and precise numeric values.
 **How this leads to the final goal:** Machine learning models require structured, numeric datasets. By converting unparsed equations and abstract indices into clear before/after feature vectors and concrete targets, we build the fundamental ground truth that makes model training possible.
 
 ### Step 2: Exploratory Data Analysis (EDA)

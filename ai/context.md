@@ -1,4 +1,4 @@
-﻿# Laser Resonator Beam Alignment Project Context
+# Laser Resonator Beam Alignment Project Context
 
 ## Project Overview
 
@@ -119,18 +119,18 @@ The model should predict amount and direction of change for:
 - `Pitch Position`
 - `Yaw Position`
 
-Delta values should be rounded to 2 decimal places.
+Delta values should be rounded to 3 decimal places.
 
 ## Change Detection Rule
 
-A parameter should be considered changed based on its value rounded to 2 decimal places.
+A parameter should be considered changed based on its value rounded to 3 decimal places.
 
 Examples:
 
-- `2.75` and `2.76` are different.
-- `2.75` and `2.751` are treated as equal after rounding to 2 decimal places.
+- `2.755` and `2.756` are different.
+- `2.755` and `2.7551` are treated as equal after rounding to 3 decimal places.
 
-Both change labels and delta regression targets should use this 2-decimal convention.
+Both change labels and delta regression targets should use this 3-decimal convention.
 
 ## Prediction Structure
 
@@ -139,16 +139,16 @@ The initial model design should use a two-stage structure:
 1. Predict which parameters changed.
 2. Predict delta values only for the parameters predicted as changed.
 
-For final output, all four parameter deltas should be returned. Parameters predicted as unchanged should be returned as `0.00`.
+For final output, all four parameter deltas should be returned. Parameters predicted as unchanged should be returned as `0.000`.
 
 Example output shape:
 
 ```json
 {
-  "Iris Position delta": 0.00,
-  "Z Position delta": 0.00,
-  "Pitch Position delta": 0.35,
-  "Yaw Position delta": -0.10
+  "Iris Position delta": 0.000,
+  "Z Position delta": 0.000,
+  "Pitch Position delta": 0.350,
+  "Yaw Position delta": -0.100
 }
 ```
 
@@ -325,7 +325,7 @@ Physical limits can be added later when available.
 - Desired after-state beam metadata is available at inference time.
 - After-state parameter values are not available at inference time.
 - Targets are parameter deltas, not raw final parameter values.
-- Deltas and changed/not-changed labels use 2-decimal rounding.
+- Deltas and changed/not-changed labels use 3-decimal rounding.
 - `diff_count` is used for evaluation consistency, not as the only target.
 - Data is assumed to be internally consistent.
 - EDA comes before modeling.

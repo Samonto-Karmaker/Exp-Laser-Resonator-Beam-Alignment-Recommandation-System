@@ -127,11 +127,11 @@ The four controllable parameters are:
 - `Pitch Position`
 - `Yaw Position`
 
-Target deltas should be computed from the original raw numeric values first, then rounded to 2 decimals using standard Python/pandas rounding:
+Target deltas should be computed from the original raw numeric values first, then rounded to 3 decimals using standard Python/pandas rounding:
 
 ```text
-target_delta = round(after_raw_value - before_raw_value, 2)
-target_changed = 1 if target_delta != 0.00 else 0
+target_delta = round(after_raw_value - before_raw_value, 3)
+target_changed = 1 if target_delta != 0.000 else 0
 ```
 
 Target delta columns:
