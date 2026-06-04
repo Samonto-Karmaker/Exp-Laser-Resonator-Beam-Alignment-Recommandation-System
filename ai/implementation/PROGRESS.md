@@ -17,13 +17,6 @@ This board manages the project state using a Jira-like sprint flow, focusing on 
 
 _(Sub-tasks for future steps or overflow from the current step)_
 
-### Step 1 / Unit 03 - Pair Join and Role-Based Column Layout
-
-- Join before/after states using `index1` and `index2`.
-- Apply `before_`, `after_`, `target_`, and `meta_` column roles.
-- Retain required audit/grouping metadata and before-state controllable parameters.
-- Drop direct date/time/file metadata from the final CSV.
-
 ### Step 1 / Unit 04 - Gaussian Parsing and Raw String Cleanup
 
 - Parse before/after X/Y Gaussian equations into numeric center and scale features.
@@ -83,3 +76,10 @@ _(Completed steps. Link to step folder files here. Clear out granular sub-tasks 
 - Validate fields required for pair joining, candidate features, Gaussian parsing, targets, and metadata retention through notebook/Python code.
 - Document schema assumptions or unexpected raw-field issues in the Step 1 notebook.
 - Do not rely on model-side/manual inspection of raw JSON files as the source of truth for Unit 02.
+
+### Step 1 / Unit 03 - Pair Join and Role-Based Column Layout
+
+- Joined before/after states using `index1` and `index2`.
+- Formatted columns with `before_`, `after_`, and `meta_` prefix roles.
+- Retained required grouping metadata (`meta_index1`, `meta_index2`, `meta_diff_count`, `meta_before_experiment_number`, `meta_after_experiment_number`) and before-state controllable parameters.
+- Dropped direct date, timestamp, and filename columns from the dataset.

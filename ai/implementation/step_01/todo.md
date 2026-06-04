@@ -4,22 +4,6 @@ This checklist is grouped into execution units that can move through the sprint 
 
 ## Backlog
 
-### Unit 03 - Pair Join and Role-Based Column Layout
-
-- Join before/after states using `index1` and `index2`.
-- Rename columns with role prefixes: `before_`, `after_`, `target_`, and `meta_`.
-- Keep required metadata columns:
-    - `meta_index1`
-    - `meta_index2`
-    - `meta_before_experiment_number`
-    - `meta_after_experiment_number`
-    - `meta_diff_count`
-- Keep before-state controllable parameter columns as model input features.
-- Drop direct date/time/file metadata from the final CSV:
-    - `Date`
-    - `Timestamp`
-    - `filename`
-
 ### Unit 04 - Gaussian Parsing and Raw String Cleanup
 
 - Parse before/after X/Y Gaussian equation strings into numeric center and scale fields.
@@ -77,3 +61,11 @@ This checklist is grouped into execution units that can move through the sprint 
 - Validate required fields for pair joining, beam features, Gaussian parsing, target synthesis, and metadata retention through notebook/Python code.
 - Document any schema assumptions or unexpected raw-field issues in the notebook.
 - Do not rely on model-side/manual inspection of raw JSON files as the source of truth for Unit 02.
+
+### Unit 03 - Pair Join and Role-Based Column Layout
+
+- Joined before/after states using `index1` and `index2`.
+- Renamed columns with role prefixes: `before_`, `after_`, and `meta_`.
+- Kept required metadata columns (`meta_index1`, `meta_index2`, `meta_before_experiment_number`, `meta_after_experiment_number`, `meta_diff_count`).
+- Kept before-state controllable parameter columns as model input features.
+- Dropped direct date/time/file metadata (`Date`, `Timestamp`, `filename`) from the final CSV.

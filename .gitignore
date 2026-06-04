@@ -23,6 +23,7 @@ venv.bak/
 .idea/
 *.swp
 *.swo
+.agents/
 
 # OS generated files
 .DS_Store
