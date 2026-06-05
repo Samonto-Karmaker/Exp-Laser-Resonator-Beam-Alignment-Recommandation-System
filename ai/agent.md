@@ -60,6 +60,7 @@ Whenever a new execution thread or session begins, quickly verify your current s
 - Ensure every major change successfully propagates up through documentation.
 - After completing a full step, update `ai/implementation/step_##/outcome.md`, clear any granular sub-tasks from `ai/implementation/PROGRESS.md`, and add a single summary entry to the "Done" section with the step name, a short description, and links to the step folder files.
 - Record architectural shifts—such as choosing LightGBM over Random Forest due to speed/accuracy—inside `ai/memory/architectural_decisions.md`. **This file is strictly APPEND-ONLY.** Always include a timestamp and a detailed justification of why the decision was made. Before acting on architecture, identify and adhere to the latest relevant ADR (Architectural Decision Record) in this file.
+
 ---
 
 ## Coding Standards
@@ -68,3 +69,14 @@ Whenever a new execution thread or session begins, quickly verify your current s
 2. **Reproducibility**: Use fixed seeds for random state splitting (e.g., `random_state=42`) and algorithmic initializations.
 3. **Paths**: Use relative directories assuming the project root as `.` (e.g., `data/raw/labels.json`).
 4. **Documentation**: Write clear parameters, return types, and docstrings for all Python functions in the `src/` directory.
+
+---
+
+## Notebook Execution Protocol
+
+If the agent is unable to edit or execute a notebook (e.g., due to environment constraints or tool limitations):
+
+1. **Provide code in chat**: Present the full code snippet(s) needed in the chat box for the developer to review
+2. **Prompt user action**: Ask the developer to run the code in their Jupyter notebook environment
+3. **Request results**: When the code produces output (dataframes, plots, metrics), ask the developer to share the results
+4. **Continue based on feedback**: Use the developer-provided results to continue analysis and decision-making
