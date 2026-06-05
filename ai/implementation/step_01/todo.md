@@ -4,11 +4,7 @@ This checklist is grouped into execution units that can move through the sprint 
 
 ## Backlog
 
-### Unit 07 - End-of-Step Review and Promotion Decision
-
-- Review whether any validated helper logic should be promoted into `src/`.
-- Record the Step 1 outcome, generated artifact, validation summary, and any unresolved issues in `ai/implementation/step_01/outcome.md`.
-- Prepare Step 1 for completion by clearing granular tasks from `ai/implementation/PROGRESS.md` and adding the final step summary when all units are done.
+_(Sub-tasks for future steps or overflow from the current step)_
 
 ## To Do
 
@@ -32,7 +28,7 @@ This checklist is grouped into execution units that can move through the sprint 
     - `data/raw/sampled_pairs_500k.json`
 - Write and run Python code in the Step 1 notebook to load both raw files.
 - Inspect shapes, sample records, field names, and basic schema characteristics through notebook/Python output.
-- Validate required fields for pair joining, beam features, Gaussian parsing, target synthesis, and metadata retention through notebook/Python code.
+- Validate fields required for pair joining, candidate features, Gaussian parsing, target synthesis, and metadata retention through notebook/Python code.
 - Document any schema assumptions or unexpected raw-field issues in the notebook.
 - Do not rely on model-side/manual inspection of raw JSON files as the source of truth for Unit 02.
 
@@ -47,9 +43,9 @@ This checklist is grouped into execution units that can move through the sprint 
 ### Unit 04 - Gaussian Parsing and Raw String Cleanup
 
 - Parsed before/after X/Y Gaussian equation strings into numeric center and scale fields (`before_x_gaussian_center_parsed`, `before_x_gaussian_scale_parsed`, etc.).
-- Reported Gaussian parse failure counts (0 failures detected).
-- Inspected parse failure patterns (no failure pattern to inspect, as it matched perfectly across all 500k records).
+- Reported 0 parse failures across all 500,000 pairs (all parsed successfully).
 - Dropped raw Gaussian equation string columns from the joined dataset.
+- Promoted `parse_gaussian_equation()` and `parse_gaussian_dataframe()` into `src/features/gaussian_parser.py`.
 
 ### Unit 05 - Target Synthesis and Leakage Checks
 
@@ -57,13 +53,23 @@ This checklist is grouped into execution units that can move through the sprint 
 - Computed the four binary changed-label columns.
 - Excluded rows with missing required target-synthesis values (none found).
 - Dropped after-state controllable parameter columns to avoid leakage.
-- Validated `meta_diff_count` against synthesized changed labels.
+- Validated `meta_diff_count` against synthesized changed labels (0 mismatches).
+- Promoted target synthesis functions into `src/features/targets.py`.
 
 ### Unit 06 - Missing-Value Resolution and Final CSV Validation
 
 - Inspect missing values by column.
-- Choose and document an explicit missing-value strategy.
-- Ensure the final CSV has no missing values.
-- Save exactly one processed CSV:
-    - `data/processed/dataset_001.csv`
+- Choose and document an explicit missing-value strategy (sentinel imputation for beam metrics, median for Gaussian features).
+- Verify the final dataset has no missing values.
+- Save exactly one processed CSV: `data/processed/dataset_001.csv` (500,000 rows, 45 columns).
 - Confirm the saved CSV is unsplit and ready for Step 2 EDA.
+
+### Unit 07 - End-of-Step Review and Promotion Decision
+
+- Reviewed validated notebook helper logic and promoted into `src/`:
+    - `src/features/gaussian_parser.py`: Gaussian equation parsing (0 failures, 100% success)
+    - `src/features/targets.py`: Delta computation and changed-label synthesis
+    - `src/data/load_data.py`: Data loading utilities
+- Verified final dataset: 500,000 rows, 45 columns, 0 missing values
+- All validation checks passed (7/7)
+- Updated `ai/implementation/step_01/outcome.md` with complete documentation

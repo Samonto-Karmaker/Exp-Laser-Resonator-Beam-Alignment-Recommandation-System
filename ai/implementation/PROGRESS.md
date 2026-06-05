@@ -15,12 +15,6 @@ This board manages the project state using a Jira-like sprint flow, focusing on 
 
 _(Sub-tasks for future steps or overflow from the current step)_
 
-### Step 1 / Unit 07 - End-of-Step Review and Promotion Decision
-
-- Decide whether any validated notebook helper logic should be promoted into `src/`.
-- Update `ai/implementation/step_01/outcome.md` with artifacts, validations, and unresolved issues.
-- When Step 1 is fully complete, clear granular Step 1 tasks from this board and add a single Step 1 summary entry under Done.
-
 ## To Do
 
 _(Actionable sub-tasks for the current step)_
@@ -35,46 +29,13 @@ _(Sub-tasks that are executed but pending verification/evaluation)_
 
 _(Completed steps. Link to step folder files here. Clear out granular sub-tasks once the whole step is done.)_
 
-### Step 1 / Unit 01 - Notebook Scaffold and Run Context
+### Step 1 / Data Ingestion & Preprocessing
 
-- Created `notebooks/01_data_ingestion_and_prep.ipynb`.
-- Defined project-root-relative paths in the notebook.
-- Added notebook sections for load, validate, join, parse, synthesize targets, resolve missing values, validate output, and save CSV.
-- Verified the notebook JSON parses successfully.
+- Completed notebook scaffold and raw data loading (Units 01-02)
+- Joined before/after states with role-based column prefixes (Unit 03)
+- Parsed Gaussian equations (0 failures, promoted to `src/features/gaussian_parser.py`) (Unit 04)
+- Synthesized targets and validated against meta_diff_count (Unit 05)
+- Resolved missing values with sentinel/median imputation, saved `dataset_001.csv` (Unit 06)
+- Promoted validated helper logic to `src/` modules (Units 07)
 
-### Step 1 / Unit 02 - Raw Data Loading and Schema Validation
-
-- Confirm raw paths for `labels.json` and `sampled_pairs_500k.json`.
-- Write and run Python code in the Step 1 notebook to load the raw files.
-- Inspect shapes, sample records, field names, and basic schema characteristics through notebook/Python output.
-- Validate fields required for pair joining, candidate features, Gaussian parsing, targets, and metadata retention through notebook/Python code.
-- Document schema assumptions or unexpected raw-field issues in the Step 1 notebook.
-- Do not rely on model-side/manual inspection of raw JSON files as the source of truth for Unit 02.
-
-### Step 1 / Unit 03 - Pair Join and Role-Based Column Layout
-
-- Joined before/after states using `index1` and `index2`.
-- Formatted columns with `before_`, `after_`, and `meta_` prefix roles.
-- Retained required grouping metadata (`meta_index1`, `meta_index2`, `meta_diff_count`, `meta_before_experiment_number`, `meta_after_experiment_number`) and before-state controllable parameters.
-- Dropped direct date, timestamp, and filename columns from the dataset.
-
-### Step 1 / Unit 04 - Gaussian Parsing and Raw String Cleanup
-
-- Parse before/after X/Y Gaussian equations into numeric center and scale features.
-- Reported 0 parse failures across all 500,000 pairs (all parsed successfully).
-- Dropped raw Gaussian equation string columns from the final joined dataset.
-
-### Step 1 / Unit 05 - Target Synthesis and Leakage Checks
-
-- Computed the four target delta columns using raw numeric values and standard Python/pandas 3-decimal rounding.
-- Computed the four binary changed-label columns.
-- Excluded rows with missing required target-synthesis values (none found).
-- Dropped after-state controllable parameter columns to avoid leakage.
-- Validated `meta_diff_count` against synthesized changed labels.
-
-### Step 1 / Unit 06 - Missing-Value Resolution and Final CSV Validation
-
-- Inspect missing values by column.
-- Choose and document the missing-value strategy.
-- Verify the final dataset has no missing values.
-- Save exactly one unsplit processed CSV to `data/processed/dataset_001.csv`.
+See [`ai/implementation/step_01/outcome.md`](step_01/outcome.md) for full details.
