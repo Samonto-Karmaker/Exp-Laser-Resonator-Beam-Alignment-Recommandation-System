@@ -68,10 +68,20 @@ _TBD_
 
 ## Files Generated
 
-| Artifact      | Path                                           | Status |
-| ------------- | ---------------------------------------------- | ------ |
-| EDA Notebook  | `notebooks/02_exploratory_data_analysis.ipynb` | _TBD_  |
-| Memory Report | `ai/memory/eda_insights.md`                    | _TBD_  |
+| Artifact            | Path                                           | Status |
+| ------------------- | ---------------------------------------------- | ------ |
+| Model-Ready Dataset | `data/processed/dataset_002.csv`               | _TBD_  |
+| EDA Notebook        | `notebooks/02_exploratory_data_analysis.ipynb` | _TBD_  |
+| Memory Report       | `ai/memory/eda_insights.md`                    | _TBD_  |
+| Step 2 Outcome      | `ai/implementation/step_02/outcome.md`         | _TBD_  |
+
+## Dataset 002 Specs
+
+- **Rows**: _TBD_
+- **Columns**: _TBD_
+- **Encoding applied**: _TBD_ (one-hot, ordinal, or target encoding)
+- **Transformations applied**: _TBD_ (scaling, normalization, log transforms)
+- **Features removed**: _TBD_ (constant, near-constant, or leakage-related)
 
 ## Unresolved Issues
 

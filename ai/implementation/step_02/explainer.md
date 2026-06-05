@@ -64,11 +64,21 @@ Create `ai/memory/eda_insights.md` documenting:
 
 ## Expected Deliverables
 
-| Artifact                 | Path                                           | Status           |
-| ------------------------ | ---------------------------------------------- | ---------------- |
-| EDA Notebook             | `notebooks/02_exploratory_data_analysis.ipynb` | To be created    |
-| Memory Report            | `ai/memory/eda_insights.md`                    | To be created    |
-| Feature Engineering Plan | Embedded in memory report                      | To be documented |
+| Artifact            | Path                                           | Status                     |
+| ------------------- | ---------------------------------------------- | -------------------------- |
+| Model-Ready Dataset | `data/processed/dataset_002.csv`               | Generated at end of Step 2 |
+| EDA Notebook        | `notebooks/02_exploratory_data_analysis.ipynb` | To be created              |
+| Memory Report       | `ai/memory/eda_insights.md`                    | To be created              |
+| Step 2 Outcome      | `ai/implementation/step_02/outcome.md`         | To be completed            |
+
+**Dataset 002 Specs**:
+
+- Encoded features (one-hot, ordinal, or target encoding as decided)
+- Transformed features (scaling, normalization, log transforms as needed)
+- Removed constant/near-constant features
+- Removed features with data leakage
+- Features ordered for consistency with Step 3 requirements
+- No target columns (targets will be handled separately in Step 3)
 
 ## Workflow Protocol
 

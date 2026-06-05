@@ -52,6 +52,14 @@ _(Actionable sub-tasks for the current step, grouped into independent units)_
 14. Update `ai/implementation/step_02/outcome.md` with summary
 15. **Promote reusable EDA functions to `src/`** (e.g., quality check functions, encoding helpers, transformation utilities)
 
+### Unit 06: Model-Ready Dataset
+
+16. Apply encoding transformations to categorical features (one-hot, ordinal, or target encoding)
+17. Apply numeric transformations (scaling, normalization, log transforms) as needed
+18. Remove constant/near-constant features
+19. Remove features with data leakage
+20. Save final dataset as `data/processed/dataset_002.csv`
+
 ## In Progress
 
 ## In Review
