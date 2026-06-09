@@ -19,17 +19,6 @@ _(Sub-tasks for future steps or overflow from the current step)_
 
 _(Actionable sub-tasks for the current step, grouped into independent units)_
 
-### Unit 02: Benchmark Model Iteration (0-3 attempts)
-
-7. Run benchmark Random Forest models for all 4 parameters (Iris, Z, Pitch, Yaw)
-8. Calculate average accuracy and determine next steps
-9. **Iterative Process** (repeat up to 3 times if accuracy < 70%):
-    - If accuracy ≥ 70%: Extract feature importances for each parameter
-    - If 50% ≤ accuracy < 70%: Apply feature engineering, re-run benchmark models, repeat
-    - If accuracy < 50%: Stop and flag for investigation
-10. **Visualize**: Create bar plot of feature importances for each parameter
-11. **Visualize**: Create accuracy comparison plot across iterations
-
 ### Unit 03: Feature Engineering Strategy
 
 12. Document encoding strategies (one-hot, ordinal, target)
@@ -64,11 +53,32 @@ _(Actionable sub-tasks for the current step, grouped into independent units)_
 
 ## In Review
 
-_(Sub-tasks that are executed but pending verification/evaluation)_
-
 ## Done
 
 _(Completed tasks for this step)_
+
+### Unit 02: Benchmark Models - Classification + Regression ✅
+
+**Completed:** All tasks (classification, regression, feature importance analysis, visualizations)
+
+**Classification Results:**
+
+- Average Test Accuracy: **98.91%** (Iris: 99.36%, Z: 99.99%, Pitch: 98.44%, Yaw: 97.85%)
+- All parameters far exceed 70% threshold
+
+**Regression Results:**
+
+- Average Test R²: **0.9993** (99.93% variance explained)
+- Average Sign Accuracy: **98.59%**, Normalized MAE: **0.05%** of delta range
+- All parameters pass MAE thresholds
+
+**Critical Discovery:**
+
+- `before_parameter_position` DOMINATES regression (30-50% importance)
+- Regression simpler than classification (99.97% vs 89-95% cumulative importance for top 20)
+- Two-stage architecture validated
+
+**Decision:** Skip Units 03
 
 ### Unit 01: Data Quality Assessment ✅
 

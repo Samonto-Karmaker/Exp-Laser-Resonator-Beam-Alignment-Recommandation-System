@@ -8,17 +8,6 @@ _(Sub-tasks for future steps or overflow from the current step)_
 
 _(Actionable sub-tasks for the current step, grouped into independent units)_
 
-### Unit 02: Benchmark Model Iteration (0-3 attempts)
-
-7. Run benchmark Random Forest models for all 4 parameters (Iris, Z, Pitch, Yaw)
-8. Calculate average accuracy and determine next steps
-9. **Iterative Process** (repeat up to 3 times if accuracy < 70%):
-    - If accuracy ≥ 70%: Extract feature importances for each parameter
-    - If 50% ≤ accuracy < 70%: Apply feature engineering, re-run benchmark models, repeat
-    - If accuracy < 50%: Stop and flag for investigation
-10. **Visualize**: Create bar plot of feature importances for each parameter
-11. **Visualize**: Create accuracy comparison plot across iterations
-
 ### Unit 03: Feature Engineering Strategy
 
 12. Document encoding strategies (one-hot, ordinal, target)
@@ -80,5 +69,43 @@ _(Completed tasks - will be consolidated at end of Step 2)_
 - Dataset reduced from 45 to 43 columns
 - Class imbalance detected: Pitch (90.55% changed), Yaw (90.28% changed)
 - Before parameter positions are strongest predictors (r ≈ 0.7 with deltas)
+
+**Status:** Complete and approved
+
+### Unit 02: Benchmark Models - Complete (Classification + Regression)
+
+**Classification Benchmarks:** 7. ✅ Run benchmark Random Forest classifiers for all 4 parameters (Iris, Z, Pitch, Yaw) 8. ✅ Calculate average accuracy: **98.91%** (far exceeds 70% threshold) 9. ✅ Extract feature importances for each parameter
+
+**Regression Benchmarks:** 10. ✅ Run benchmark Random Forest regressors for all 4 parameter deltas 11. ✅ Calculate MAE, RMSE, R², sign accuracy 12. ✅ All regression benchmarks PASSED success criteria
+
+**Visualizations:** 13. ✅ Classification: Top features, cumulative importance, heatmap, category analysis 14. ✅ Regression: Predicted vs actual, residuals, MAE/R² comparison 15. ✅ Regression feature importance: Top features extraction and classification vs regression comparison
+
+**Key Insight from Feature Comparison:**
+
+- `before_parameter_position` DOMINATES regression (30-50% importance) but is less dominant in classification (14-20%)
+- Regression is simpler: Top 20 features = 99.97% cumulative importance
+- Classification is more complex: Top 20 features = 89-95% cumulative importance
+- **Validates two-stage architecture**: Stages solve fundamentally different sub-problems (effect-based vs cause-based)
+
+**Results Summary:**
+
+**Classification:**
+
+- Average Test Accuracy: **98.91%**
+- Iris: 99.36%, Z: 99.99%, Pitch: 98.44%, Yaw: 97.85%
+
+**Regression:**
+
+- Average Test R²: **0.9993** (99.93% variance explained)
+- Average Sign Accuracy: **98.59%**
+- Average Normalized MAE: **0.05%** of delta range
+- Iris MAE: 2.46 (✅ < 100), Z MAE: 0.0071 (✅ < 2)
+- Pitch MAE: 0.0002 (✅ < 0.02), Yaw MAE: 0.0002 (✅ < 0.02)
+
+**Decision:**
+
+- ✅ Two-stage architecture is VALIDATED
+- ✅ Feature set is SUFFICIENT (no engineering needed)
+- ✅ Skip Units 03 (feature engineering)
 
 **Status:** Complete and approved
