@@ -36,8 +36,9 @@ Outputs and labels will be strictly governed by physical constraints mapped to 2
 
 ### Step 2: Exploratory Data Analysis (EDA)
 
-**Overview:** Conduct a thorough statistical analysis on the ingested dataset. This includes assessing target balance (classifying how often 0, 1, 2, 3, or 4 parameters change), investigating the predictive value of parsed Gaussian features, and determining whether fields like `Power Measurement` and `Exposure Time` carry useful signals or noise.
-**How this leads to the final goal:** EDA prevents "blind modeling." By understanding exact distributions, correlations, and potential data leaks (like time-based drift), we can filter out misleading data and ensure our models learn the true physical relationship between beam shapes and alignments, ensuring a more accurate final recommendation.
+**Overview:** Conduct a thorough statistical analysis on the ingested dataset. This includes assessing target balance (classifying how often 0, 1, 2, 3, or 4 parameters change), investigating the predictive value of parsed Gaussian features, and determining whether fields like `Power Measurement` and `Exposure Time` carry useful signals or noise. Additionally, validate the feasibility of the two-stage architecture by benchmarking baseline classifiers (change detection) and regressors (delta prediction) to ensure both stages are viable before proceeding to detailed feature engineering.
+
+**How this leads to the final goal:** EDA prevents "blind modeling." By understanding exact distributions, correlations, and potential data leaks (like time-based drift), we can filter out misleading data and ensure our models learn the true physical relationship between beam shapes and alignments. Baseline benchmarks of both classification and regression validate that the proposed two-stage architecture is feasible and that the current feature set supports accurate predictions in both stages, ensuring a more accurate final recommendation.
 
 ### Step 3: Feature Engineering & Strategic Discretization (Data Splitting)
 

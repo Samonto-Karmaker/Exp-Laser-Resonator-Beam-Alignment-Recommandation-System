@@ -34,7 +34,7 @@ A detailed, production-ready experimentation structure to keep data, notebooks, 
 │       └── dataset_grouped_split.csv       # The parsed dataset mapped for experiment-grouped splitting
 ├── notebooks/                              # Jupyter notebooks for interactive experimentation & visualization
 │   ├── 01_data_ingestion_and_prep.ipynb    # Workspace to build and test the data joining & parsing logic
-│   ├── 02_exploratory_data_analysis.ipynb  # Visualizations, statistical testing, and bounds analysis
+│   ├── 02_exploratory_data_analysis.ipynb  # Visualizations, statistical testing, bounds analysis, and baseline model benchmarking
 │   └── 03_baseline_model_training.ipynb    # Scratchpad for testing classifier and regressor logic
 ├── src/                                    # Reusable Python module code (the core ML engine)
 │   ├── __init__.py

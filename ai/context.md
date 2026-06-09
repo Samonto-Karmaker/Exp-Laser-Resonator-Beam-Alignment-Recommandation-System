@@ -145,10 +145,10 @@ Example output shape:
 
 ```json
 {
-  "Iris Position delta": 0.000,
-  "Z Position delta": 0.000,
-  "Pitch Position delta": 0.350,
-  "Yaw Position delta": -0.100
+    "Iris Position delta": 0.0,
+    "Z Position delta": 0.0,
+    "Pitch Position delta": 0.35,
+    "Yaw Position delta": -0.1
 }
 ```
 
@@ -186,6 +186,15 @@ EDA should answer:
 - Are parsed Gaussian features useful or redundant?
 - Are there correlations or dependencies between parameters and beam metadata?
 - What are the observed min/max ranges for each parameter and delta?
+
+### EDA Validation of Two-Stage Architecture
+
+EDA should include baseline benchmarking of both stages of the two-stage architecture:
+
+1. **Classification Benchmarks**: Baseline Random Forest classifiers to validate that parameter-change detection is feasible with the current feature set.
+2. **Regression Benchmarks**: Baseline Random Forest regressors to validate that delta prediction is feasible and that the feature set supports accurate magnitude/direction predictions.
+
+This dual validation ensures both stages of the architecture are viable before proceeding to detailed feature engineering and train/val/test splitting.
 
 ## Feature Engineering Plan
 
