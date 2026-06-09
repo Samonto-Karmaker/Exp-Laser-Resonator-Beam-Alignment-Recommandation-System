@@ -19,14 +19,6 @@ _(Sub-tasks for future steps or overflow from the current step)_
 
 _(Actionable sub-tasks for the current step, grouped into independent units)_
 
-### Unit 03: Feature Engineering Strategy
-
-12. Document encoding strategies (one-hot, ordinal, target)
-13. Document transformation strategies (scaling, normalization, log transforms)
-14. Document feature engineering recommendations matrix
-15. Document redundancy cases (what NOT to do and why)
-16. **Visualize**: Create before/after comparison plots for engineered features (if applicable)
-
 ### Unit 04: Split Strategy Assessment
 
 17. Analyze experiment number distribution for grouped split validity
@@ -56,6 +48,14 @@ _(Actionable sub-tasks for the current step, grouped into independent units)_
 ## Done
 
 _(Completed tasks for this step)_
+
+### Unit 03: Feature Engineering Strategy - Skipped
+
+12. Document encoding strategies (one-hot, ordinal, target)
+13. Document transformation strategies (scaling, normalization, log transforms)
+14. Document feature engineering recommendations matrix
+15. Document redundancy cases (what NOT to do and why)
+16. **Visualize**: Create before/after comparison plots for engineered features (if applicable)
 
 ### Unit 02: Benchmark Models - Classification + Regression ✅
 
